@@ -1,0 +1,8 @@
+import google.generativeai as genai  # Import the Gemini API library 
+genai.configure(api_key="YOUR_API_KEY")  # Set your API key
+
+model = genai.GenerativeModel(model_name="gemini-1.5-pro")  # Select the Gemini model
+chat = model.start_chat()  # Start a chat session
+
+response = chat.send_message("What is the capital of France?")  # Send a prompt to the model 
+print(response.text)  # Print the generated response 
